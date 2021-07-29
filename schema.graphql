@@ -1,0 +1,35 @@
+type Mutation {
+  CreateUser(user: UserInput): User
+}
+
+type Query {
+  Users: [User] @listLength(min:3, max: 20)
+}
+
+type User {
+  name: String @fake(type: firstName)
+  age: Int @examples(values: [20 25 30 35])
+  address: Address
+}
+
+type Address {
+  street: String @fake(type: streetName)
+  number: Int @examples(values: [303 409])
+  city: String @fake(type: city)
+  state: String @fake(type: stateAbbr)
+  country: String @fake(type: country)
+}
+
+input UserInput {
+  name: String
+  age: Int,
+  address: AddressInput
+}
+
+input AddressInput {
+  street: String
+  number: Int
+  city: String
+  state: String
+  country: String
+}

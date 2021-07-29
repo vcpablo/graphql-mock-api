@@ -1,0 +1,11 @@
+{
+  "name": "graphql-mock-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "mock:api": "graphql-faker ./mock-api/schema.graphql"
+  },
+  "devDependencies": {
+    "graphql-faker": "^2.0.0-rc.25"
+  }
+}
